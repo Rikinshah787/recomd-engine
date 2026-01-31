@@ -1,0 +1,19 @@
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+.venv/
+.env
+.agent/
+node_modules/
+frontend/
+.git/
+.gitignore
+README.md
+data/*.npy
+data/*.faiss
+data/products_clean.json
+# Note: We actually WANT to keep the data/ folder if we want the app to have data on startup
+# BUT, it's better to generate it or download it.
+# For now, we'll keep the small data files but ignore the big ones if they were there.
+# Let's NOT ignore the data folder entirely so Railway has the products.

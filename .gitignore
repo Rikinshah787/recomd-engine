@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+.venv/
+.env
+
+# Node
+node_modules/
+frontend/node_modules/
+dist/
+frontend/dist/
+.eslintcache
+
+# Antigravity Kit
+.agent/
+
+# Data (Keep clean data, ignore generated artifacts if they are too large)
+data/product_index.faiss
+data/embeddings.npy
+
+# OS
+.DS_Store
+Thumbs.db
