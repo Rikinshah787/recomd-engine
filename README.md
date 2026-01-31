@@ -78,4 +78,4 @@ uvicorn app.main:app --reload
 ## 📄 Final Thoughts
 This MVP demonstrates a complete journey from **Job Description Analysis** to **Production Deployment**. It solves the core Information Retrieval (IR) challenges of discovery: balancing semantic relevancy with business objectives.
 
-**Contact**: [smartkidacademy@gmail.com](mailto:smartkidacademy@gmail.com)
+**Contact**: [rshah88@asu.edu](mailto:rshah88@asu.edu)
