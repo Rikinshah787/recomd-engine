@@ -47,8 +47,8 @@ class ShoppingRankingEngine:
         print("🔄 Loading ranking engine resources...")
         
         # Load embedding model
-        print("   Loading embedding model...")
-        self.model = SentenceTransformer('all-MiniLM-L6-v2')
+        print("   Loading embedding model (CPU)...")
+        self.model = SentenceTransformer('all-MiniLM-L6-v2', device='cpu')
         
         # Load FAISS index
         print("   Loading FAISS index...")

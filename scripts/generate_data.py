@@ -8,6 +8,7 @@ Focus: Shopping intent signals (price sensitivity, popularity, category match)
 import json
 import random
 import hashlib
+import os
 from pathlib import Path
 
 # Shopping-focused categories with realistic subcategories
@@ -231,8 +232,9 @@ def main():
     data_dir.mkdir(exist_ok=True)
     
     # Generate products
-    print("\n📦 Generating 2000 synthetic products...")
-    products = generate_products(2000)
+    num_products = int(os.environ.get("NUM_PRODUCTS", 500))
+    print(f"\n📦 Generating {num_products} synthetic products...")
+    products = generate_products(num_products)
     
     # Save to JSON
     output_path = data_dir / "products_clean.json"

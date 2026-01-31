@@ -17,16 +17,17 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copy the rest of the application
 COPY . .
 
-# Generate data and embeddings during build
-RUN python scripts/generate_data.py && python scripts/build_embeddings.py
+# Copy startup script
+COPY start.sh .
+RUN sed -i 's/\r$//' start.sh && chmod +x start.sh
 
 # Environment variables
 ENV PYTHONUNBUFFERED=1
 ENV PORT=8000
+ENV NUM_PRODUCTS=500
 
 # Expose the port
 EXPOSE 8000
 
-# Start the application
-# We use 0.0.0.0 to allow external connections on Railway
-CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]
+# Start the application using the startup script
+CMD ["./start.sh"]
